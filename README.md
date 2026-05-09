@@ -50,7 +50,7 @@
 | 10 | [🚀 Getting Started](#-getting-started) |
 | 11 | [⚙️ Configuration & Environment](#️-configuration--environment) |
 | 12 | [📊 Project Stats](#-project-stats) |
-| 13 | [🔮 Roadmap](#-roadmap--known-issues) |
+| 13 | [🔮 Roadmap](#-roadmap) |
 | 14 | [🤝 Contributing](#-contributing) |
 
 <br/>
@@ -161,7 +161,7 @@ This project follows a **Feature-First Clean Architecture** pattern — keeping 
 │                       STATE LAYER                                  │
 │         ┌────────────────────────────────────┐                    │
 │         │   Riverpod Providers (52 total)    │                    │
-│         │   + Provider (legacy/mixed)        │                    │
+│         │   + Provider (screen-level state)  │                    │
 │         └────────────────┬───────────────────┘                    │
 └──────────────────────────┼────────────────────────────────────────┘
                            │  calls
@@ -426,7 +426,7 @@ The app uses a **hybrid state management** approach:
 | Layer | Tool | Purpose |
 |-------|------|---------|
 | Global App State | `flutter_riverpod` | User data, portfolio, watchlist, providers |
-| Local UI State | `Provider` | Screen-level ephemeral state |
+| Screen UI State | `Provider` | Screen-level UI and form state |
 | Persistent State | `SharedPreferences` | Onboarding flags, user preferences |
 | Secure State | `FlutterSecureStorage` | Auth tokens, sensitive keys |
 
@@ -457,7 +457,7 @@ final watchlistProvider = StateNotifierProvider<WatchlistNotifier, WatchlistStat
 ```yaml
 # ── State Management ──────────────────────────
 flutter_riverpod: ^2.5.1          # Primary state management
-provider: ^6.1.5+1                # Secondary / legacy state
+provider: ^6.1.5+1                # Screen-level UI state
 
 # ── Navigation ────────────────────────────────
 go_router: ^14.0.2                # Declarative routing
@@ -540,17 +540,7 @@ git checkout development   # 🔀 Switch to the development branch
 flutter pub get
 ```
 
-### 3. Configure Environment
-
-```bash
-# Create your .env file in the root directory
-cp .env.example .env
-
-# Fill in your values:
-nano .env
-```
-
-### 4. Run the App
+### 3. Run the App
 
 ```bash
 # Debug mode (development)
@@ -566,7 +556,7 @@ flutter run --release
 flutter devices
 ```
 
-### 5. Build for Production
+### 4. Build for Production
 
 ```bash
 # Android APK
@@ -587,23 +577,10 @@ flutter build ios --release
 
 ## ⚙️ Configuration & Environment
 
-The app uses `flutter_dotenv` for environment-based configuration. Create a `.env` file in the root:
+The app uses `flutter_dotenv` to load environment variables at runtime. Configuration values are accessed via:
 
-```env
-# API Configuration
-API_BASE_URL=https://your-api-base-url.com/api
-
-# Add any other environment-specific keys below
-```
-
-> ⚠️ **Security Warning:** Never commit your `.env` file to version control.  
-> Add `.env` to your `.gitignore`.
-
-The env values are accessed via:
 ```dart
 final baseUrl = EnvConfig.apiBaseUrl;
-// or
-dotenv.env['API_BASE_URL']
 ```
 
 <br/>
@@ -644,22 +621,52 @@ dotenv.env['API_BASE_URL']
 
 <br/>
 
-### 🛣️ Roadmap
+## 🔮 Roadmap
 
 - [ ] 🌙 **Dark Mode** support
 - [ ] 🌐 **Multi-language** support (Hindi, Gujarati)
 - [ ] 📤 **Share portfolio performance** as image/card
 - [ ] 🔔 **Push notifications** for SIP reminders and order updates
 - [ ] 📲 **Biometric login** (Fingerprint / Face ID)
-- [ ] 📦 Migrate fully to **Riverpod** (remove `provider` package)
 - [ ] ✅ **Unit & widget tests** for core business logic
 - [ ] 🔍 **Semantic search** for mutual fund discovery
+- [ ] 📊 **Advanced analytics** — portfolio insights and fund comparisons
 
 <br/>
 
 ---
 
 <br/>
+
+## 🤝 Contributing
+
+We welcome contributions! Here's how to get involved:
+
+```bash
+# 1. Fork the repo
+# 2. Create your feature branch
+git checkout -b feature/your-feature-name
+
+# 3. Make your changes and commit
+git commit -m "feat: add your feature description"
+
+# 4. Push to your branch
+git push origin feature/your-feature-name
+
+# 5. Open a Pull Request to the `development` branch
+```
+
+### Commit Message Convention
+
+```
+feat:     New feature
+fix:      Bug fix
+refactor: Code refactoring (no feature/fix)
+style:    Formatting, missing semicolons, etc.
+docs:     Documentation only
+test:     Adding or fixing tests
+chore:    Build process, package updates
+```
 
 <br/>
 
