@@ -679,16 +679,13 @@ chore:    Build process, package updates
 ```
 ╔══════════════════════════════════════════════╗
 ║                                              ║
-║    Built with ❤️  by the JSL Dev Team         ║
-║    Jhaveri Securities Limited © 2025         ║
+║    Built with ❤️  by the Smith Kansara       ║
+║                                              ║
 ║                                              ║
 ║    Flutter  •  Dart  •  Riverpod             ║
 ║                                              ║
 ╚══════════════════════════════════════════════╝
 ```
-
-*Invest smarter. Live better.*
-
 ---
 
 ⭐ **If this project helped you, leave a star on the repo!**
