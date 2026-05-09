@@ -50,7 +50,7 @@
 | 10 | [🚀 Getting Started](#-getting-started) |
 | 11 | [⚙️ Configuration & Environment](#️-configuration--environment) |
 | 12 | [📊 Project Stats](#-project-stats) |
-| 13 | [🔮 Roadmap & Known Issues](#-roadmap--known-issues) |
+| 13 | [🔮 Roadmap](#-roadmap--known-issues) |
 | 14 | [🤝 Contributing](#-contributing) |
 
 <br/>
@@ -597,7 +597,7 @@ API_BASE_URL=https://your-api-base-url.com/api
 ```
 
 > ⚠️ **Security Warning:** Never commit your `.env` file to version control.  
-> Add `.env` to your `.gitignore`. The current repo has `.env` tracked — this should be fixed.
+> Add `.env` to your `.gitignore`.
 
 The env values are accessed via:
 ```dart
@@ -644,18 +644,6 @@ dotenv.env['API_BASE_URL']
 
 <br/>
 
-## 🔮 Roadmap & Known Issues
-
-### ⚠️ Known Issues (To Fix)
-
-| # | Issue | Priority |
-|---|-------|----------|
-| 1 | `.env` file is committed to git and tracked as an asset — exposes API keys | 🔴 **Critical** |
-| 2 | Mixed state management (Riverpod + Provider) — can be unified to Riverpod only | 🟡 Medium |
-| 3 | All screens are nested under `features/auth/` even non-auth screens | 🟡 Medium |
-| 4 | Inconsistent folder naming — some `PascalCase`, some `snake_case` | 🟢 Low |
-| 5 | `print()` used in some files instead of a unified logger | 🟢 Low |
-
 ### 🛣️ Roadmap
 
 - [ ] 🌙 **Dark Mode** support
@@ -672,36 +660,6 @@ dotenv.env['API_BASE_URL']
 ---
 
 <br/>
-
-## 🤝 Contributing
-
-We welcome contributions! Here's how to get involved:
-
-```bash
-# 1. Fork the repo
-# 2. Create your feature branch
-git checkout -b feature/your-feature-name
-
-# 3. Make your changes and commit
-git commit -m "feat: add your feature description"
-
-# 4. Push to your branch
-git push origin feature/your-feature-name
-
-# 5. Open a Pull Request to the `development` branch
-```
-
-### Commit Message Convention
-
-```
-feat:     New feature
-fix:      Bug fix
-refactor: Code refactoring (no feature/fix)
-style:    Formatting, missing semicolons, etc.
-docs:     Documentation only
-test:     Adding or fixing tests
-chore:    Build process, package updates
-```
 
 <br/>
 
