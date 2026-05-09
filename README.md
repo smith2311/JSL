@@ -51,7 +51,6 @@
 | 11 | [⚙️ Configuration & Environment](#️-configuration--environment) |
 | 12 | [📊 Project Stats](#-project-stats) |
 | 13 | [🔮 Roadmap](#-roadmap) |
-| 14 | [🤝 Contributing](#-contributing) |
 
 <br/>
 
@@ -582,11 +581,6 @@ The app uses `flutter_dotenv` to load environment variables at runtime. Configur
 ```dart
 final baseUrl = EnvConfig.apiBaseUrl;
 ```
-
-<br/>
-
----
-
 <br/>
 
 ## 📊 Project Stats
@@ -631,42 +625,6 @@ final baseUrl = EnvConfig.apiBaseUrl;
 - [ ] ✅ **Unit & widget tests** for core business logic
 - [ ] 🔍 **Semantic search** for mutual fund discovery
 - [ ] 📊 **Advanced analytics** — portfolio insights and fund comparisons
-
-<br/>
-
----
-
-<br/>
-
-## 🤝 Contributing
-
-We welcome contributions! Here's how to get involved:
-
-```bash
-# 1. Fork the repo
-# 2. Create your feature branch
-git checkout -b feature/your-feature-name
-
-# 3. Make your changes and commit
-git commit -m "feat: add your feature description"
-
-# 4. Push to your branch
-git push origin feature/your-feature-name
-
-# 5. Open a Pull Request to the `development` branch
-```
-
-### Commit Message Convention
-
-```
-feat:     New feature
-fix:      Bug fix
-refactor: Code refactoring (no feature/fix)
-style:    Formatting, missing semicolons, etc.
-docs:     Documentation only
-test:     Adding or fixing tests
-chore:    Build process, package updates
-```
 
 <br/>
 
